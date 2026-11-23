@@ -1,12 +1,13 @@
-# Custom PCA via Constrained Optimization (Boston Housing Dataset)
+# Custom PCA via Constrained Optimization
 
 This repository provides a step-by-step implementation of **Principal Component Analysis (PCA)** 
-
 The goal is to find an optimal $m$-dimensional affine subspace for high-dimensional statistical data.
 
 ---
 
 ##  Problem Overview
+Some datasets consist of huge amount of data where some features are not as useful as the others. With dimensionality reduction we can avoid unnecessary information or duplication
+The first algo that is 'from scratch' implemented, works on Boston Housing Dataset set from https://www.statlearning.com/resources-python
 
 Given data points $x_1, \dots, x_N \in \mathbb{R}^8$ representing 8 selected features from the Boston Housing Dataset (`crim`, `nox`, `rm`, `age`, `dis`, `tax`, `ptratio`, `lstat`), we construct:
 
@@ -20,7 +21,7 @@ Such that $a + \text{Span}(\{v_1, v_2, v_3\})$ forms a **3-best-fitting affine s
 
 ## First approach 
 is using **constrained numerical optimization** (`scipy.optimize.minimize`) rather than standard Singular Value Decomposition (SVD) 
-
+# Mathematical Foundation
 ### 1. Data Matrix & Centering
 Construct the data matrix $X \in \mathbb{R}^{N \times 8}$ and compute the empirical mean:
 
