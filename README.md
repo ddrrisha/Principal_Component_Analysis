@@ -27,14 +27,14 @@ $$a = \bar{x} = \frac{1}{N} \sum_{i=1}^N x_i, \quad X_0 = X - a$$
 ### 2. First Principal Component ($v_1$)
 Solve the optimization problem:
 
-$$\max \left\{ \Vert{}X_0 v\Vert{}^2 : v \in \mathbb{R}^8, \Vert{}v\Vert{}=1 \right\}$$
+$$\max { \Vert{}X_0 v\Vert{}^2 : v \in \mathbb{R}^8, \Vert{}v\Vert{}=1 }$$
 
 *(In code, we minimize $-\Vert{}X_0 v\Vert{}^2$ under the equality constraint $\Vert{}v\Vert{}^2 - 1 = 0$.)*
 
 ### 3. Subsequent Components ($v_m$ for $m \ge 2$)
 Iteratively solve for each $v_m$:
 
-$$\max \left\{ \Vert{}X_0 v\Vert{}^2 : v \in \mathbb{R}^8, \Vert{}v\Vert{}=1, \langle v, v_j \rangle = 0 \quad \forall j = 1, \dots, m-1 \right\}$$
+$$\max { \Vert{}X_0 v\Vert{}^2 : v \in \mathbb{R}^8, \Vert{}v\Vert{}=1, \langle v, v_j \rangle = 0 \quad \forall j = 1, \dots, m-1 }$$
 
 Adding orthogonality constraints relative to all previously found basis vectors.
 
